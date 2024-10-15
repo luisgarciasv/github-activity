@@ -1,4 +1,5 @@
 import { httpReq } from './lib/promisify.js';
+import { logFormater } from './lib/log-formater.js';
 import { argv } from 'node:process';
 
 const [username, perPage] = argv.slice(2);
@@ -14,6 +15,7 @@ example:  github-activity luisgarciasv 5
         `);
 } else {
     httpReq(username, perPage)
-        .then((res) => console.log(res))
+        .then((res) => logFormater(res))
+        .then((res) => res.forEach( e => console.log(e)))
         .catch((err) => console.log(err));
 }
