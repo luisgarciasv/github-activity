@@ -1,6 +1,7 @@
 import { httpReq } from './lib/promisify.js';
+import { argv } from 'node:process';
 
-const [username, perPage] = process.argv.slice(2);
+const [username, perPage] = argv.slice(2);
 
 if (!username) {
     console.warn(`
