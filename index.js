@@ -16,6 +16,9 @@ example:  github-activity luisgarciasv 5
 } else {
     httpReq(username, perPage)
         .then((res) => logFormater(res))
-        .then((res) => res.forEach( e => console.log(e)))
+        .then((res) => {
+            if (!res.length) { console.log(`The user ${username} doesn't have recent activity`) }
+            res.forEach( e => console.log(e))
+        })
         .catch((err) => console.log(err));
 }
