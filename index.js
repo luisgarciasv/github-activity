@@ -17,8 +17,12 @@ example:  github-activity luisgarciasv 5
     httpReq(username, perPage)
         .then((res) => logFormater(res))
         .then((res) => {
-            if (!res.length) { console.log(`The user ${username} doesn't have recent activity`) }
-            res.forEach( e => console.log(e))
+            if (!res.length) {
+                console.log(
+                    `The user ${username} doesn't have recent activity`,
+                );
+            }
+            res.forEach((e) => console.log(e));
         })
         .catch((err) => console.log(err));
 }
