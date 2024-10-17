@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { httpReq } from './lib/promisify.js';
 import { logFormater } from './lib/log-formater.js';
 import { argv } from 'node:process';
